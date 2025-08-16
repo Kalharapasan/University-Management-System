@@ -88,14 +88,16 @@
             <div class="col-md-3">
                 <div class="sidebar">
                     <a class="active" href="#home">Home</a>
-                    <a href="#news">News</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#about">About</a>
+                    <a href="#news">Teacher</a>
+                    <a href="#contact">Student</a>
+                    <a href="#contact">Courses</a>
+                    <a href="#about">Enrollment</a>
+                    <a href="#about">Payment</a>
                 </div>
             </div>
             <div class="col-md-9">
-                <h1>Welcome to the University Management System</h1>
-                <p>This is the main content area.</p>
+
+
             </div>
 
         </div>
