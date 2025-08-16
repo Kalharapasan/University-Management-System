@@ -1,84 +1,70 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 use App\Models\Student;
-use Illuminate\Http\Response;
-use Illuminate\Http\View;
-
 
 
 class StudentController extends Controller
 {
-
-    protected $student;
-    protected $stu_record;
-
-    public function __construct(){
-
-        $this->student = new Student();
-        $this->stu_record = new StuRecord();
-
+    /**
+     * Display a listing of the resource.
+     */
+    public function index(): View
+    {
+        $students=Student::all();
+        return view('student.index', compact('students'));
     }
 
-    public function index(){
-
-        $response['students'] = $this->student->all();
-        return view('pages.student.index')->with($response);
-
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create(): Factory|View
+    {
+        return view('student.creat');
     }
 
-    public function save(Request $request){
-
-        //dd($request->all());
-
-        $this->student->create($request->all());
-        return redirect()->back();
-
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request): RedirectResponse
+    {
+        $input =$request ->all();
+        Student::create($input);
+        return redirect('student')->with('flash_message', 'Student created successfully!');
     }
 
-
-    public function delete($stu_id){
-
-        $student = $this->student->find($stu_id);
-        $student->delete();
-        return redirect()->back();
-
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
     }
 
-
-    public function edit($stu_id){
-
-        $response['student'] = $this->student->find($stu_id);
-        return view('pages.student.edit')->with($response);
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id): View
+    {
+        return view('student.edit');
     }
 
-
-
-    public function update(Request $request, $stu_id){
-
-        $student = $this->student->find($stu_id);
-
-        $student->update(array_merge($student->toArray(), $request->toArray()));
-        return redirect('student');
-
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
     }
 
-
-    public function vewRecords($stu_id){
-
-        $response['student'] = $this->student->find($stu_id);
-        $response['stuRecords'] = $this->stu_record->where('student_id', $stu_id)->get();
-
-        return view('pages.student.manage')->with($response);
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
     }
-
-    public function saveRecord(Request $request){
-
-        $this->stu_record->create($request->all());
-        return redirect()->back();
-    }
-
-
 }
