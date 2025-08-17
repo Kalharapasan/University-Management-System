@@ -39,9 +39,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id):View
     {
-        //
+        $Student = Student::findOrFail($id);
+        return view('student.show', compact('Student', 'id'));
     }
 
     /**
@@ -49,22 +50,28 @@ class StudentController extends Controller
      */
     public function edit(string $id): View
     {
-        return view('student.edit');
+        $student = Student::findOrFail($id);
+        return view('student.edit', compact('student'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
-        //
+        $student = Student::find($id);
+        $input = $request->all();
+        $student->update($input);
+        return redirect('student')->with('flash_message', 'Student updated successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): RedirectResponse
     {
-        //
+        $student = Student::find($id);
+        $student->delete();
+        return redirect('student')->with('flash_message', 'Student deleted successfully!');
     }
 }
