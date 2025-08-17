@@ -14,8 +14,13 @@
                 <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="mb-3">
-                <label for="course_id" class="form-label">Course ID</label>
-                <input type="text" class="form-control" id="course_id" name="course_id" required>
+                <label for="course_id" class="form-label">Course</label>
+                <select class="form-control" id="course_id" name="course_id" required>
+                    <option value="">Select Course</option>
+                    @foreach($courses as $id => $name)
+                        <option value="{{ $id }}">{{ $name }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="mb-3">
                 <label for="start_date" class="form-label">Start Date</label>

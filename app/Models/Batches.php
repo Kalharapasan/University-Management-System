@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Batches extends Model
 {
     use HasFactory;
@@ -12,4 +13,10 @@ class Batches extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = ['name', 'course_id', 'start_date'];
+
+
+    public function course_id()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }
