@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\BatchesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,13 @@ Route::get('course/{id}', [CoursesController::class, 'show'])->name('course.show
 Route::get('course/{id}/edit', [CoursesController::class, 'edit'])->name('course.edit');
 Route::put('course/{id}', [CoursesController::class, 'update'])->name('course.update');
 Route::delete('course/{id}', [CoursesController::class, 'destroy'])->name('course.destroy');
+
+//BATCHES ROUTES
+Route::get('batch', [BatchesController::class, 'index'])->name('batches');
+Route::get('batch/create', [BatchesController::class, 'create'])->name('batch.create');
+Route::post('/batch', [BatchesController::class, 'store'])->name('batch.store');
+Route::get('batch/{id}', [BatchesController::class, 'show'])->name('batch.show');
+Route::get('batch/{id}/edit', [BatchesController::class, 'edit'])->name('batch.edit');
+Route::put('batch/{id}', [BatchesController::class, 'update'])->name('batch.update');
+Route::delete('batch/{id}', [BatchesController::class, 'destroy'])->name('batch.destroy');
+
