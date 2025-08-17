@@ -71,7 +71,7 @@
         <div class="row">
             <div class="col-md-12">
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#"><h2>University Managment System</h2></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -85,15 +85,15 @@
         </div>
         <div class="row">
 
-            <div class="col-md-3">
+            <div class="col-md-3 ">
                 <div class="sidebar">
-                    <a class="active" href="#home">Home</a>
-                    <a href="{{url('/teacher')}}">Teacher</a>
-                    <a href="{{url('/student')}}">Student</a>
-                    <a href="{{url('/course')}}">Courses</a>
-                    <a href="{{url('/batch')}}">Batches</a>
-                    <a href="#about">Enrollment</a>
-                    <a href="#about">Payment</a>
+                    <a class="bg-info" href="#home">Home</a>
+                    <a class="bg-info" href="{{url('/teacher')}}">Teacher</a>
+                    <a class="bg-info" href="{{url('/student')}}">Student</a>
+                    <a class="bg-info" href="{{url('/course')}}">Courses</a>
+                    <a class="bg-info" href="{{url('/batch')}}">Batches</a>
+                    <a class="bg-info" href="{{url('/enrollment')}}">Enrollment</a>
+                    <a class="bg-info" href="#about">Payment</a>
                 </div>
             </div>
             <div class="col-md-9">

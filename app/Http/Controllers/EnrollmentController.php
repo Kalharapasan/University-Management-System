@@ -1,64 +1,64 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
+use App\Models\Enrollment;
 
 class EnrollmentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+
+    public function index(): View
     {
-        //
+        $enrollments = Enrollment::all();
+        return view('Enrollment.index', compact('enrollments'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+
+    public function create(): View
     {
-        //
+        return view('Enrollment.creat');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $input = $request->all();
+        Enrollment::create($input);
+        return redirect('enrollment')->with('flash_message', 'Enrollment created successfully!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+
+    public function show(string $id): View
     {
-        //
+        $enrollment = Enrollment::findOrFail($id);
+        return view('Enrollment.show', compact('enrollment', 'id'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+
+    public function edit(string $id): View
     {
-        //
+        $enrollment = Enrollment::findOrFail($id);
+        return view('enrollment.edit', compact('enrollment'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+   
+    public function update(Request $request, string $id): RedirectResponse
     {
-        //
+        $enrollment = Enrollment::find($id);
+        $input = $request->all();
+        $enrollment->update($input);
+        return redirect('enrollment')->with('flash_message', 'Enrollment updated successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): RedirectResponse
     {
-        //
+        $enrollment = Enrollment::find($id);
+        $enrollment->delete();
+        return redirect('enrollment')->with('flash_message', 'Enrollment deleted successfully!');
     }
 }

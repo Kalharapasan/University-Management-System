@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\BatchesController;
+use App\Http\Controllers\EnrollmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,11 @@ Route::get('batch/{id}/edit', [BatchesController::class, 'edit'])->name('batch.e
 Route::put('batch/{id}', [BatchesController::class, 'update'])->name('batch.update');
 Route::delete('batch/{id}', [BatchesController::class, 'destroy'])->name('batch.destroy');
 
+//ENROLLMENT ROUTES
+Route::get('enrollment', [EnrollmentController::class, 'index'])->name('enrollments');
+Route::get('enrollment/create', [EnrollmentController::class, 'create'])->name('enrollment.create');
+Route::post('/enrollment', [EnrollmentController::class, 'store'])->name('enrollment.store');
+Route::get('enrollment/{id}', [EnrollmentController::class, 'show'])->name('enrollment.show');
+Route::get('enrollment/{id}/edit', [EnrollmentController::class, 'edit'])->name('enrollment.edit');
+Route::put('enrollment/{id}', [EnrollmentController::class, 'update'])->name('enrollment.update');
+Route::delete('enrollment/{id}', [EnrollmentController::class, 'destroy'])->name('enrollment.destroy');
