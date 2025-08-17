@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,13 @@ Route::get('student/{id}', [StudentController::class, 'show'])->name('student.sh
 Route::get('student/{id}/edit', [StudentController::class, 'edit'])->name('student.edit');
 Route::put('student/{id}', [StudentController::class, 'update'])->name('student.update');
 Route::delete('student/{id}', [StudentController::class, 'destroy'])->name('student.destroy');
+
+
+//TEACHER ROUTES
+Route::get('teacher', [TeacherController::class, 'index'])->name('teachers');
+Route::get('teacher/create', [TeacherController::class, 'create'])->name('teacher.create');
+Route::post('/teacher', [TeacherController::class, 'store'])->name('teacher.store');
+Route::get('teacher/{id}', [TeacherController::class, 'show'])->name('teacher.show');
+Route::get('teacher/{id}/edit', [TeacherController::class, 'edit'])->name('teacher.edit');
+Route::put('teacher/{id}', [TeacherController::class, 'update'])->name('teacher.update');
+Route::delete('teacher/{id}', [TeacherController::class, 'destroy'])->name('teacher.destroy');
