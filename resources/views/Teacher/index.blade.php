@@ -40,8 +40,9 @@
                             <td>{{ $teacher->status }}</td>
                             <td>
                                 <a href="{{ url('teacher/'.$teacher->id) }}" title="View Teacher"><button class="btn btn-info" style="display:inline"><i class="fas fa-eye" aria-hidden="true"></i> View</button></a>
+                              
                                 <a href="{{ url('teacher/'.$teacher->id.'/edit') }}" title="Edit Teacher"><button class="btn btn-primary" style="display:inline"><i class="fas fa-edit" aria-hidden="true"></i> Edit</button></a>
-                                |
+
                                 <form action="{{ url('teacher/'.$teacher->id) }}" accept-charset="UTF-8" method="POST" style="display:inline">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}

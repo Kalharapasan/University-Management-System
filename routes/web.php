@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\CoursesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,12 @@ Route::get('teacher/{id}', [TeacherController::class, 'show'])->name('teacher.sh
 Route::get('teacher/{id}/edit', [TeacherController::class, 'edit'])->name('teacher.edit');
 Route::put('teacher/{id}', [TeacherController::class, 'update'])->name('teacher.update');
 Route::delete('teacher/{id}', [TeacherController::class, 'destroy'])->name('teacher.destroy');
+
+//COURSE ROUTES
+Route::get('course', [CoursesController::class, 'index'])->name('courses');
+Route::get('course/create', [CoursesController::class, 'create'])->name('course.create');
+Route::post('/course', [CoursesController::class, 'store'])->name('course.store');
+Route::get('course/{id}', [CoursesController::class, 'show'])->name('course.show');
+Route::get('course/{id}/edit', [CoursesController::class, 'edit'])->name('course.edit');
+Route::put('course/{id}', [CoursesController::class, 'update'])->name('course.update');
+Route::delete('course/{id}', [CoursesController::class, 'destroy'])->name('course.destroy');

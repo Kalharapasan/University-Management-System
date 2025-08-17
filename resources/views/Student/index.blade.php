@@ -41,7 +41,6 @@
                             <td>
                                 <a href="{{ url('student/'.$student->id) }}" title="View Student"><button class="btn btn-info" style="display:inline" a><i class="fas fa-eye" aria-hidden="true"></i> View</button></a>
                                 <a href="{{ url('student/'.$student->id.'/edit') }}" title="Edit Student"><button class="btn btn-primary" style="display:inline" ><i class="fas fa-edit" aria-hidden="true"></i> Edit</button></a>
-                                |
                                 <form action="{{ url('student/'.$student->id) }}"  accept-charset="UTF-8" method="POST" style="display:inline">
 
                                     {{ csrf_field() }}
