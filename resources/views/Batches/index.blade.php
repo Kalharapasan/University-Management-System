@@ -29,7 +29,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $batch->name }}</td>
-                            <td>{{ $batch->course->name ?? $batch->course_id ?? 'N/A' }}</td>
+                            <td>{{ $batch->course->name  }}</td>
                             <td>{{ $batch->start_date }}</td>
                             <td>
                                 <a href="{{ url('batch/'.$batch->id) }}" title="View Batch">

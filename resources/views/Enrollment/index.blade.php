@@ -19,8 +19,8 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Enroll On</th>
-                        <th scope="col">Batch</th>
-                        <th scope="col">Student</th>
+                        <th scope="col">Batch Name</th>
+                        <th scope="col">Student Name</th>
                         <th scope="col">Join Date</th>
                         <th scope="col">Fee</th>
                         <th scope="col">Action</th>

@@ -12,8 +12,8 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush mb-3">
                         <li class="list-group-item"><strong>Enroll On:</strong> {{ $enrollment->enroll_on }}</li>
-                        <li class="list-group-item"><strong>Batch ID:</strong> {{ $enrollment->batch_id }}</li>
-                        <li class="list-group-item"><strong>Student ID:</strong> {{ $enrollment->student_id }}</li>
+                        <li class="list-group-item"><strong>Batch Name:</strong> {{ $enrollment->batch->name }}</li>
+                        <li class="list-group-item"><strong>Student Name:</strong> {{ $enrollment->student->name }}</li>
                         <li class="list-group-item"><strong>Join Date:</strong> {{ $enrollment->join_date }}</li>
                         <li class="list-group-item"><strong>Fee:</strong> {{ $enrollment->fee }}</li>
                     </ul>

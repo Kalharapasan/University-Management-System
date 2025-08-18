@@ -15,7 +15,7 @@
                     </div>
                     <ul class="list-group list-group-flush mb-3">
                         <li class="list-group-item"><strong>Syllabus:</strong> {{ $course->syllabus }}</li>
-                        <li class="list-group-item"><strong>Duration:</strong> {{ $course->duration }}</li>
+                        <li class="list-group-item"><strong>Duration:</strong> {{ $course->duration() }}</li>
                     </ul>
                     <a href="{{ url('course') }}" class="btn btn-secondary mt-2">
                         <i class="fas fa-arrow-left"></i> Back to List

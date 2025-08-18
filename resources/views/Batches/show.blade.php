@@ -16,7 +16,7 @@
                     <ul class="list-group list-group-flush mb-3">
                         <li class="list-group-item">
                             <strong>Course:</strong>
-                            {{ isset($batch->course) ? $batch->course->name : ($batch->course_id ?? 'N/A') }}
+                            {{ $batch->course->name }}
                         </li>
                         <li class="list-group-item">
                             <strong>Start Date:</strong> {{ $batch->start_date }}

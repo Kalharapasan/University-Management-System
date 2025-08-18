@@ -16,13 +16,13 @@
                         <input class="form-control" name="name" value="{{ $batch->name ?? '' }}" required>
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label">Course ID</label>
+                        <label class="form-label">Course</label>
                         <select class="form-control" name="course_id" required>
-                            <option value="">Select Course</option>
-                            @foreach($courses as $id => $name)
-                                <option value="{{ $id }}" {{ $batch->course_id == $id ? 'selected' : '' }}>{{ $name }}</option>
-                            @endforeach
-                        </select>
+                        <option value="">Select Course</option>
+                        @foreach($courses as $id => $name)
+                            <option value="{{ $id }}" {{ $batch->course_id == $id ? 'selected' : '' }}>{{ $name }}</option>
+                        @endforeach
+                    </select>
                     </div>
                 </div>
                 <div class="row mb-3">

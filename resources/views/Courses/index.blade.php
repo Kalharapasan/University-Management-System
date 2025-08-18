@@ -31,7 +31,7 @@
                             <td>{{$loop->iteration}}</td>
                             <td>{{ $course->name }}</td>
                             <td>{{ $course->syllabus }}</td>
-                            <td>{{ $course->duration }}</td>
+                            <td>{{ $course->duration() }}</td>
                             <td>
                                 <a href="{{ url('course/'.$course->id) }}" title="View Course"><button class="btn btn-info" style="display:inline"><i class="fas fa-eye" aria-hidden="true"></i> View</button></a>
                                 <a href="{{ url('course/'.$course->id.'/edit') }}" title="Edit Course"><button class="btn btn-primary" style="display:inline"><i class="fas fa-edit" aria-hidden="true"></i> Edit</button></a>
