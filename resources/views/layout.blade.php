@@ -93,7 +93,7 @@
                     <a class="bg-info" href="{{url('/course')}}">Courses</a>
                     <a class="bg-info" href="{{url('/batch')}}">Batches</a>
                     <a class="bg-info" href="{{url('/enrollment')}}">Enrollment</a>
-                    <a class="bg-info" href="#about">Payment</a>
+                    <a class="bg-info" href="{{url('/payment')}}">Payment</a>
                 </div>
             </div>
             <div class="col-md-9">

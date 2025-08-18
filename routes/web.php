@@ -6,6 +6,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\BatchesController;
 use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,3 +70,13 @@ Route::get('enrollment/{id}', [EnrollmentController::class, 'show'])->name('enro
 Route::get('enrollment/{id}/edit', [EnrollmentController::class, 'edit'])->name('enrollment.edit');
 Route::put('enrollment/{id}', [EnrollmentController::class, 'update'])->name('enrollment.update');
 Route::delete('enrollment/{id}', [EnrollmentController::class, 'destroy'])->name('enrollment.destroy');
+
+
+//Payment Routes
+Route::get('payment', [PaymentController::class, 'index'])->name('payments');
+Route::get('payment/create', [PaymentController::class, 'create'])->name('payment.create');
+Route::post('/payment', [PaymentController::class, 'store'])->name('payment.store');
+Route::get('payment/{id}', [PaymentController::class, 'show'])->name('payment.show');
+Route::get('payment/{id}/edit', [PaymentController::class, 'edit'])->name('payment.edit');
+Route::put('payment/{id}', [PaymentController::class, 'update'])->name('payment.update');
+Route::delete('payment/{id}', [PaymentController::class, 'destroy'])->name('payment.destroy');
