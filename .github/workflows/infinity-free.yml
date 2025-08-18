@@ -1,4 +1,4 @@
-name: Deploy to uml.wuaze.com
+name: Deploy to umltext.gamer.gd
 
 # Run manually or on push to the main branch
 on:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to uml.wuaze.com
+    name: Deploy to umltext.gamer.gd
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +24,6 @@ jobs:
           server: ftpupload.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /uml.wuaze.com/htdocs/  # For addon domains
+          server-dir: /umltext.gamer.gd/htdocs/  # For addon domains
           timeout: 86400000
           log-level: standard
