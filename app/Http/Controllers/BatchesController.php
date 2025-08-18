@@ -52,7 +52,8 @@ class BatchesController extends Controller
     public function edit(string $id): View
     {
         $batch = Batches::findOrFail($id);
-        return view('Batches.edit', compact('batch'));
+        $courses = Courses::pluck('name', 'id'); // id => name array
+        return view('Batches.edit', compact('batch', 'courses'));
     }
 
     /**
